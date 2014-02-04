@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plotting</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="400">
+    Your browser does not support canvas.
+    </canvas>
+    <form>
+      <select name="factor" id="factorId">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      x + 
+      <select name="addend" id="addendId">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br />
+      x range from [0,10]
+      <button id="plotbuttonId" type="button">Plot</button>
+    </form>
+    <p id="resultId">-</p>
+    <script type='text/javascript' src='plotting.js'></script>
+  </body>
+</html>
+
