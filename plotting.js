@@ -10,18 +10,18 @@ PLOTTING.drawXAxis = function(params) {
   var i,val;
   var xpos;
 
-  PLOTTING.context.moveTo(x0,ypos);
-  PLOTTING.context.lineTo(x1,ypos);
-  PLOTTING.context.stroke();
+  this.context.moveTo(x0,ypos);
+  this.context.lineTo(x1,ypos);
+  this.context.stroke();
   
   xpos = x0;
   for(i=0;i<10;i+=1) {
     xpos += params.xstep;
-    PLOTTING.context.moveTo(xpos, ypos - 5);
-    PLOTTING.context.lineTo(xpos, ypos + 5);
-    PLOTTING.context.stroke();
+    this.context.moveTo(xpos, ypos - 5);
+    this.context.lineTo(xpos, ypos + 5);
+    this.context.stroke();
     val = '' + (i+1);
-    PLOTTING.context.fillText(val, xpos - 2, ypos + 12);
+    this.context.fillText(val, xpos - 2, ypos + 12);
   }
 };
 
@@ -32,18 +32,18 @@ PLOTTING.drawYAxis = function(params) {
   var i, val;
   var ypos;
 
-  PLOTTING.context.moveTo(xpos, y0);
-  PLOTTING.context.lineTo(xpos, y1);
-  PLOTTING.context.stroke();
+  this.context.moveTo(xpos, y0);
+  this.context.lineTo(xpos, y1);
+  this.context.stroke();
 
   ypos = y0;
   for(i=0;i<6;i+=1) {
     ypos -= params.ystep;
-    PLOTTING.context.moveTo(xpos - 5,ypos);
-    PLOTTING.context.lineTo(xpos + 5,ypos);
-    PLOTTING.context.stroke();
+    this.context.moveTo(xpos - 5,ypos);
+    this.context.lineTo(xpos + 5,ypos);
+    this.context.stroke();
     val = '' + ((i+1)*10);
-    PLOTTING.context.fillText(val, xpos-14, ypos+3);
+    this.context.fillText(val, xpos-14, ypos+3);
   }
 };
 
@@ -54,11 +54,11 @@ PLOTTING.plotFunction = function(xvalues, params) {
   var x1 = x0 + params.width;
   var funcText = '' + params.factor + 'x + ' + params.addend;
 
-  PLOTTING.context.moveTo(x0,y0);
-  PLOTTING.context.lineTo(x1, y1);
-  PLOTTING.context.stroke();
+  this.context.moveTo(x0,y0);
+  this.context.lineTo(x1, y1);
+  this.context.stroke();
 
-  PLOTTING.context.fillText(funcText, x1 + 5, y1);
+  this.context.fillText(funcText, x1 + 5, y1);
 };
 
 PLOTTING.createPlotValues = function(params) {
